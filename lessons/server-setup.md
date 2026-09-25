@@ -54,7 +54,8 @@ Checkpoint: one line with `Standard_B2ats_v2`, and the column **Restrictions** s
 
 ## 4 · Create the server
 
-You need the **public** half of the SSH key from Lesson 2. On your laptop (WSL):
+You need the **public** half of the SSH key you added to GitHub in Lesson 2. On your
+laptop (WSL), show it (use `id_rsa.pub` if that is the one you have):
 
 ```bash
 cat ~/.ssh/id_ed25519.pub
@@ -63,7 +64,7 @@ cat ~/.ssh/id_ed25519.pub
 Copy the whole line. Back in Cloud Shell, put it between the quotes:
 
 ```bash
-MY_KEY="ssh-ed25519 AAAA... wsl-laptop"
+MY_KEY="ssh-ed25519 AAAA... your-comment"
 ```
 
 Now create a resource group (a folder for everything that belongs to this server)
