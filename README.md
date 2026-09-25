@@ -13,6 +13,8 @@ stable version all year. Slides and reading: <https://devsecops-fieldbook.vercel
 | 02 | [Git express and your first CI check](lessons/02.md) |
 | 03 | [Continuous delivery the old way: a bare server and Ansible](lessons/03.md) |
 
+Before Lesson 03: [Your own server in Azure](lessons/server-setup.md).
+
 ## Sources
 
 - Backend: [`borys25ol/fastapi-realworld-backend`](https://github.com/borys25ol/fastapi-realworld-backend) at `55111c6b335455734c139a2245d98be8288be528`. The upstream snapshot had no licence file; see [`backend/NOTICE.md`](backend/NOTICE.md).
