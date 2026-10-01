@@ -11,7 +11,7 @@ stable version all year. Slides and reading: <https://devsecops-fieldbook.vercel
 |---|---|
 | 01 | [Get the project and run the three test levels](lessons/01.md) |
 | 02 | [Git express and your first CI check](lessons/02.md) |
-| 03 | [Continuous delivery the old way: a bare server and Ansible](lessons/03.md) |
+| 03 | [Continuous delivery the old way: your own server and Ansible](lessons/03.md) |
 
 Before Lesson 03: [Your own server in Azure](lessons/server-setup.md).
 
