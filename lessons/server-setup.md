@@ -9,12 +9,17 @@ your own Ubuntu server, as its administrator.
 
 ## 1 · Get Azure for Students
 
-1. Open <https://azure.microsoft.com/free/students> and click **Start free**.
+1. Open a **private (incognito) browser window**, so that no other Microsoft account
+   gets in the way. Go to <https://azure.microsoft.com/free/students> and click
+   **Start free**.
 2. Sign in with your **college email**. If Microsoft does not know this address yet,
    it asks you to create a Microsoft account with it; do that.
 3. Confirm that you are a student and finish the form. You do **not** need a card.
 
-Checkpoint: <https://portal.azure.com> shows a subscription called **Azure for Students**.
+Now open the portal **with the domain of your college email in the address**. If your
+email is `name@college.edu.kg`, the address is `https://portal.azure.com/college.edu.kg`.
+
+Checkpoint: the portal opens, and **Subscriptions** shows **Azure for Students**.
 
 > [!NOTE]
 > The credit is real money that Microsoft pays for you. When it is gone, the server
@@ -23,8 +28,9 @@ Checkpoint: <https://portal.azure.com> shows a subscription called **Azure for S
 
 ## 2 · Open Cloud Shell
 
-Open <https://shell.azure.com>, choose **Bash**. If it asks about storage, choose
-**No storage account required** and your **Azure for Students** subscription.
+In the portal, click the **Cloud Shell** icon (`>_`) in the top bar and choose **Bash**.
+If it asks about storage, choose **No storage account required** and your
+**Azure for Students** subscription.
 
 Cloud Shell is a Linux terminal in the browser that is already logged in to your
 Azure account. Everything below runs there, **not** on your laptop, until step 6.
@@ -131,16 +137,20 @@ az group delete --name devsecops
 
 ## Troubleshooting
 
-1. **The sign-up does not accept the college email.** Try once more in a private
+1. **`AADSTS50020: User account … does not exist in tenant 'Microsoft'`.** The portal
+   opened in the wrong directory. Use a private window, finish the sign-up in step 1
+   first, and open the portal with your college domain in the address:
+   `https://portal.azure.com/<the part of your email after @>`.
+2. **The sign-up does not accept the college email.** Try once more in a private
    browser window. If it still fails, tell the instructor; do not use a card.
-2. **`RequestDisallowedByAzure`.** The region is not one of your five. Repeat step 3.
-3. **`SkuNotAvailable` or `NotAvailableForSubscription`.** This size is not available
+3. **`RequestDisallowedByAzure`.** The region is not one of your five. Repeat step 3.
+4. **`SkuNotAvailable` or `NotAvailableForSubscription`.** This size is not available
    in this region. Try another of your regions, or the size `Standard_B2ts_v2`.
-4. **`QuotaExceeded`.** Your subscription allows only a few processor cores. Delete
+5. **`QuotaExceeded`.** Your subscription allows only a few processor cores. Delete
    servers you do not need: `az vm list --output table`.
-5. **`Invalid image "Ubuntu2404"`.** Use the full name instead:
+6. **`Invalid image "Ubuntu2404"`.** Use the full name instead:
    `--image Canonical:ubuntu-24_04-lts:server:latest`.
-6. **`ssh` from the laptop hangs.** Check the address. If it still hangs, the network
+7. **`ssh` from the laptop hangs.** Check the address. If it still hangs, the network
    may block port 22; tell the instructor.
-7. **`Permission denied (publickey)`.** The key in step 4 is not the one on your
+8. **`Permission denied (publickey)`.** The key in step 4 is not the one on your
    laptop. Compare the end of both lines.
