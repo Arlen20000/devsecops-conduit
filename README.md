@@ -12,6 +12,7 @@ stable version all year. Slides and reading: <https://devsecops-fieldbook.vercel
 | 01 | [Get the project and run the three test levels](lessons/01.md) |
 | 02 | [Git express and your first CI check](lessons/02.md) |
 | 03 | [Your own server: the first deploy, by hand](lessons/03.md) |
+| 04 | [The complete application: frontend, a web server, a domain name and HTTPS](lessons/04.md) |
 
 ## Sources
 
